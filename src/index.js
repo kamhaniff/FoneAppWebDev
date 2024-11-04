@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import FoneApp from './Pages/FoneApp'
+import TandC from './Pages/TandC'
+import PandP from './Pages/PandP';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<FoneApp />} />
+        <Route path="/terms" element={<TandC />} />
+        <Route path="/privacy" element={<PandP />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 
